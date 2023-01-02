@@ -1,12 +1,12 @@
-import './App.css';
+import '../../App.css';
 
-import Menu from './components/Menu'
-import dadosInicias from './data/dados_iniciais.json'
-import BannerMain from './components/BannerMain'
-import Carousel from './components/Carousel'
+import Menu from '../../components/Menu'
+import dadosInicias from '../../data/dados_iniciais.json'
+import BannerMain from '../../components/BannerMain'
+import Carousel from '../../components/Carousel'
 
 
-const App = () => {
+const Home = () => {
   return (
     <>
       <Menu />
@@ -50,4 +50,4 @@ const App = () => {
   )
 }
 
-export default App;
+export default Home;
