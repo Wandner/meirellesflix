@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 import styled,  { css } from 'styled-components';
 
@@ -95,18 +94,5 @@ function FormField({ label, type, name, value, onChange }) {
 
     )
 }
-
-FormField.defaultProps = {
-    type: 'text',
-    value: '',
-};
-
-FormField.propTypes = {
-    label: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    type: PropTypes.string,
-    value: PropTypes.string,
-    onChange: PropTypes.func.isRequired,
-};
 
 export default FormField;
