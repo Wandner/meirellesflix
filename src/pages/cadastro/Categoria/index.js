@@ -27,8 +27,12 @@ const CadastroCategoria = () => {
     }
 
     useEffect(() => {
-        console.log('[useEffect]', 'Efeito')
-    },[])
+        const URL_TOP = window.location.hostname.includes('localhost')
+        ? 'http://localhost:8080/categorias'
+        : 'https://meirellesflix.herokuapp.com/categorias'
+        console.log('[useEffect]', URL_TOP)
+
+    },[itemCategoria.nome])
 
     return (
         <PageDefault>
