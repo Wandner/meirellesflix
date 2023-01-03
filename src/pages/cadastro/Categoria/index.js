@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import PageDefault from "../../../components/PageDefault";
 import { v4 as uuidv4 } from 'uuid';
@@ -25,6 +25,10 @@ const CadastroCategoria = () => {
     function handleChange(e) {
         setValue(e.target.getAttribute('name'), e.target.value)
     }
+
+    useEffect(() => {
+        console.log('[useEffect]', 'Efeito')
+    },[])
 
     return (
         <PageDefault>
