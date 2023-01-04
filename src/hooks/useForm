@@ -1,0 +1,29 @@
+import {useState} from "react";
+
+const useForm = () => {
+    const valoresIniciais = {
+        titulo: '',
+        descricao: '',
+        cor: ''
+    }
+    const [item, setItem] = useState(valoresIniciais)
+    function setValue(chave, valor) {
+        setItem({
+            ...item,
+            [chave]: valor
+        })
+    }
+    function handleChange(e) {
+        setValue(e.target.getAttribute('name'), e.target.value)
+    }
+    function clearForm(){
+        setItem(valoresIniciais)
+    }
+    return {
+        item,
+        handleChange,
+        clearForm
+    }
+}
+
+export default useForm;

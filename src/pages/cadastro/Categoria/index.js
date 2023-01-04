@@ -5,46 +5,53 @@ import { v4 as uuidv4 } from 'uuid';
 import FormField from "../../../components/FormField";
 
 
-const CadastroCategoria = () => {
-    const [categorias, setCategorias] = useState([])
-
+const useForm = () => {
     const valoresIniciais = {
-        nome: '',
+        titulo: '',
         descricao: '',
-        cor: '',
+        cor: ''
     }
-    const [itemCategoria, setItemCategoria] = useState(valoresIniciais)
-
+    const [item, setItem] = useState(valoresIniciais)
     function setValue(chave, valor) {
-        setItemCategoria({
-            ...itemCategoria,
-            [chave]: valor,
+        setItem({
+            ...item,
+            [chave]: valor
         })
     }
-
     function handleChange(e) {
         setValue(e.target.getAttribute('name'), e.target.value)
     }
+    function clearForm(){
+        setItem(valoresIniciais)
+    }
+    return {
+        item,
+        handleChange,
+        clearForm
+    }
+} 
 
+const CadastroCategoria = () => {
+    const {item, handleChange, clearForm} = useForm()
+    const [categorias, setCategorias] = useState([])
     useEffect(() => {
         const URL_TOP = window.location.hostname.includes('localhost')
         ? 'http://localhost:8080/categorias'
         : 'https://meirellesflix.herokuapp.com/categorias'
         console.log('[useEffect]', URL_TOP)
-
-    },[itemCategoria.nome])
+    },[])
 
     return (
         <PageDefault>
-            <h1>Cadastro de categoria: {itemCategoria.nome} </h1>
+            <h1>Cadastro de categoria: {item.titulo} </h1>
             <form onSubmit={
                 (e) => {
                     e.preventDefault();
                     setCategorias([
                         ...categorias,
-                        itemCategoria
+                        item
                     ]);
-                    setItemCategoria(valoresIniciais)
+                    clearForm()
                 }
             }
             >
@@ -52,22 +59,22 @@ const CadastroCategoria = () => {
                 <FormField
                     label='Nome da Categoria'
                     type='text'
-                    name='nome'
-                    value={itemCategoria.nome}
+                    name='titulo'
+                    value={item.titulo}
                     onChange={handleChange}
                 />
                 <FormField
                     label='Descrição da Categoria'
                     type='textarea'
                     name='descricao'
-                    value={itemCategoria.descricao}
+                    value={item.descricao}
                     onChange={handleChange}
                 />
                 <FormField
                     label='Cor'
                     type='color'
                     name='cor'
-                    value={itemCategoria.cor}
+                    value={item.cor}
                     onChange={handleChange}
                 />
 
@@ -85,8 +92,7 @@ const CadastroCategoria = () => {
                     (itemCategoria) => {
                         return (
                             <li key={uuidv4()}>
-                                {console.log(itemCategoria)}
-                                {itemCategoria.nome}; {itemCategoria.descricao}; {itemCategoria.cor}
+                                {itemCategoria.titulo}; {itemCategoria.descricao}; {itemCategoria.cor}
                             </li>
                         )
                     }

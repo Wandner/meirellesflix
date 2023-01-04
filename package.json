@@ -20,7 +20,7 @@
     "start2": "react-scripts start",
     "start": "node ./server.js",
     "dev": "concurrently \"react-scripts start\" \"node ./server.js\"",
-    "dev2":"concurrently \"react-scripts start\" \"json-server --watch ./src/data/db.json --port 8080\"",
+    "dev2":"concurrently \"react-scripts start\" \"json-server --watch ./db.json --port 8080\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
