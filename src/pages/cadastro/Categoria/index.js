@@ -4,13 +4,7 @@ import PageDefault from "../../../components/PageDefault";
 import { v4 as uuidv4 } from 'uuid';
 import FormField from "../../../components/FormField";
 
-
-const useForm = () => {
-    const valoresIniciais = {
-        titulo: '',
-        descricao: '',
-        cor: ''
-    }
+const useForm = (valoresIniciais) => {
     const [item, setItem] = useState(valoresIniciais)
     function setValue(chave, valor) {
         setItem({
@@ -32,7 +26,12 @@ const useForm = () => {
 } 
 
 const CadastroCategoria = () => {
-    const {item, handleChange, clearForm} = useForm()
+    const valoresIniciais = {
+        titulo: '',
+        descricao: '',
+        cor: ''
+    }
+    const {item, handleChange, clearForm} = useForm(valoresIniciais)
     const [categorias, setCategorias] = useState([])
     useEffect(() => {
         const URL_TOP = window.location.hostname.includes('localhost')

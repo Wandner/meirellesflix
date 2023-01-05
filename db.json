@@ -42,18 +42,21 @@
       "id": 1,
       "categoriaId": 1,
       "titulo": "O que faz uma desenvolvedora front-end? #HipstersPontoTube",
+      "descricao": "Explicação sobre o trabaho do desenvolvedor. Não perca!",
       "url": "https://www.youtube.com/watch?v=ZY3-MFxVdEw"
     },
     {
       "id": 2,
       "categoriaId": 1,
       "titulo": "SEO com React",
+      "descricao": "Descrição",
       "url": "https://www.youtube.com/watch?v=c8mVlakBESE"
     },
     {
       "id": 3,
       "categoriaId": 2,
       "titulo": "PERCURSO em NÍVEL em ÁRVORE BINÁRIA | Estruturas de Dados #14",
+      "descricao": "Descrição",
       "url": "https://www.youtube.com/watch?v=UOK7nS2E9xM"
     },
     {
@@ -109,6 +112,18 @@
       "categoriaId": 5,
       "titulo": "God of War 4",
       "url": "https://www.youtube.com/watch?v=FyIwEFXOcaE"
+    },
+    {
+      "titulo": "Video padrão",
+      "url": "https://www.youtube.com/watch?v=jOAU81jdi-c",
+      "categoriaId": 1,
+      "id": 13
+    },
+    {
+      "titulo": "Video padrão",
+      "url": "https://www.youtube.com/watch?v=jOAU81jdi-c",
+      "categoriaId": 2,
+      "id": 14
     }
   ]
 }

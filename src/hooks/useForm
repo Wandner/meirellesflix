@@ -1,11 +1,11 @@
-import {useState} from "react";
+import {useState} from 'react';
 
-const useForm = () => {
-    const valoresIniciais = {
+const useForm = (valoresIniciais) => {
+   /*  const valoresIniciais = {
         titulo: '',
         descricao: '',
         cor: ''
-    }
+    } */
     const [item, setItem] = useState(valoresIniciais)
     function setValue(chave, valor) {
         setItem({
